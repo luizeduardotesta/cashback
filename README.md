@@ -46,7 +46,7 @@
  - Listagem de regras (get `api/rules`)
 
  - Cadastrar compra do usuario (post `api/purchases`)
-   ```
+  ```
   {
     purchase: { 
       rule_id: 1,
@@ -55,7 +55,7 @@
     }
   }
   ```
-  
+
  - Listagem de compras (get `api/purchases`)
 
  - Listar cashback por cliente (get `api/cashback`)
