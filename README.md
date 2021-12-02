@@ -54,7 +54,8 @@
       value: 2000
     }
   }
-
+  ```
+  
  - Listagem de compras (get `api/purchases`)
 
  - Listar cashback por cliente (get `api/cashback`)
