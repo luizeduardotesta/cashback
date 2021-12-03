@@ -8,7 +8,7 @@ defmodule CashbackWeb.Router do
   scope "/api", CashbackWeb do
     pipe_through :api
 
-    post "/rules", RulesController, :create
+    post "/rules", RuleController, :create
   end
 
   # Enables LiveDashboard only for development

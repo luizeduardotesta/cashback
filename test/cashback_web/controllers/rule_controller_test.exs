@@ -7,11 +7,11 @@ defmodule CashbackWeb.RuleControllerTest do
 
   describe "create/2" do
     test "returns a rule when valid data", %{conn: conn} do
-      params = %{description: "something", bonus: 10}
+      params = %{description: "cashback simples", bonus: 10}
 
-      conn = post(conn, Routes.rules_path(conn, :create), rule: params)
+      conn = post(conn, Routes.rule_path(conn, :create), rule: params)
 
-      assert subject = json_response(conn, 201)
+      assert subject = json_response(conn, 201)["data"]
       assert subject["description"] == params.description
       assert subject["bonus"] == params.bonus
       assert is_nil(subject["id"]) == false
@@ -20,7 +20,7 @@ defmodule CashbackWeb.RuleControllerTest do
     test "returns error when invalid data", %{conn: conn} do
       params = %{description: "", bonus: 10}
 
-      conn = post(conn, Routes.rules_path(conn, :create), rule: params)
+      conn = post(conn, Routes.rule_path(conn, :create), rule: params)
 
       assert subject = json_response(conn, 422)
     end
