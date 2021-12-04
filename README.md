@@ -51,7 +51,7 @@
     purchase: { 
       rule_id: 1,
       user_cpf: "466.745.098-20",
-      value: 2000
+      price: 2000
     }
   }
   ```
