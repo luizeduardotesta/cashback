@@ -12,4 +12,8 @@ defmodule CashbackWeb.RuleView do
       bonus: rule.bonus
     }
   end
+
+  def render("index.json", %{rules: rules}) do
+    %{data: render_many(rules, __MODULE__, "rule.json")}
+  end
 end

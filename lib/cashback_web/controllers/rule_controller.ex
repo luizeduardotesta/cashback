@@ -13,4 +13,9 @@ defmodule CashbackWeb.RuleController do
       |> render("show.json", rule: rule)
     end
   end
+
+  def index(conn, _params) do
+    conn
+    |> render("index.json", rules: Rules.list)
+  end
 end
