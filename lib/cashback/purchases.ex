@@ -101,4 +101,12 @@ defmodule Cashback.Purchases do
   def change(%Purchase{} = purchase, attrs \\ %{}) do
     Purchase.changeset(purchase, attrs)
   end
+
+  @doc """
+  Returns a cashback calculation.
+
+  """
+  def calc_cashback(price, bonus) do
+    price * (bonus / 100)
+  end
 end

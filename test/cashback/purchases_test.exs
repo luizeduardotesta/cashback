@@ -60,4 +60,13 @@ defmodule Cashback.PurchasesTest do
       assert %Ecto.Changeset{} = Purchases.change(purchase)
     end
   end
+
+  describe "calc_cashback/2" do
+    test "return a float value when passad two integer" do
+      price = 100
+      bonus = 10
+
+      assert Purchases.calc_cashback(price, bonus) === 10.0
+    end
+  end
 end

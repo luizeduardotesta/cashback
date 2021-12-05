@@ -14,5 +14,6 @@ defmodule Cashback.Rules.Rule do
     rule
     |> cast(attrs, [:description, :bonus])
     |> validate_required([:description, :bonus])
+    |> validate_number(:bonus, greater_than: 0)
   end
 end
