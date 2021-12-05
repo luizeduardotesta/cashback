@@ -14,8 +14,8 @@ defmodule CashbackWeb.PurchaseController do
     end
   end
 
-#  def index(conn, _params) do
-#    conn
-#    |> render("index.json", purchases: Purchases.list)
-#  end
+  def index(conn, _params) do
+    conn
+    |> render("index.json", purchases: Purchases.list)
+  end
 end

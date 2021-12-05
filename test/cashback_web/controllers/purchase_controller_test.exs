@@ -32,4 +32,23 @@ defmodule CashbackWeb.PurchaseControllerTest do
 
     assert _subject = json_response(conn, 422)
   end
+
+  describe "index/2" do
+    setup %{conn: conn} do
+      {:ok, conn: conn, purchase: purchase_fixture()}
+    end
+
+    test "returns a list of rules when valid data", %{conn: conn, purchase: purchase} do
+      purchase = Cashback.Repo.preload(purchase, :rule)
+      conn = get(conn, Routes.purchase_path(conn, :index))
+
+      assert [subject] = json_response(conn, 200)["data"]
+      assert subject["id"] == purchase.id
+      assert subject["price"] == purchase.price
+      assert subject["user_cpf"] == purchase.user_cpf
+      assert subject["rule_id"] == purchase.rule_id
+      assert subject["rule_description"] == purchase.rule.description
+      assert subject["cashback"] == Cashback.Purchases.calc_cashback(purchase.price, purchase.rule.bonus)
+    end
+  end
 end
