@@ -1,0 +1,160 @@
+{
+    "_type": "export",
+    "__export_format": 4,
+    "__export_date": "2021-12-06T00:48:08.470Z",
+    "__export_source": "insomnia.desktop.app:v2021.6.0",
+    "resources": [
+        {
+            "_id": "req_0fe7be39b29b41d2b8baa34e90ed5ce5",
+            "parentId": "wrk_1e535267a7ed434899bb20d98583d551",
+            "modified": 1638751516283,
+            "created": 1638751506652,
+            "url": "http://localhost:4000/api/purchases",
+            "name": "list purchase",
+            "description": "",
+            "method": "GET",
+            "body": {},
+            "parameters": [],
+            "headers": [],
+            "authentication": {},
+            "metaSortKey": -1638751506652,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "wrk_1e535267a7ed434899bb20d98583d551",
+            "parentId": null,
+            "modified": 1638750778383,
+            "created": 1638750778383,
+            "name": "api",
+            "description": "",
+            "scope": "collection",
+            "_type": "workspace"
+        },
+        {
+            "_id": "req_855c315514994a5da346b3b58c275744",
+            "parentId": "wrk_1e535267a7ed434899bb20d98583d551",
+            "modified": 1638751460636,
+            "created": 1638751377274,
+            "url": "http://localhost:4000/api/purchases",
+            "name": "create purchase",
+            "description": "",
+            "method": "POST",
+            "body": {
+                "mimeType": "application/json",
+                "text": "  {\n    \"purchase\": { \n      \"rule_id\": 1,\n      \"user_cpf\": \"466.745.098-20\",\n      \"price\": 2000\n    }\n  }"
+            },
+            "parameters": [],
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json",
+                    "id": "pair_512b5da170d14e07a585e24601e906e1"
+                }
+            ],
+            "authentication": {},
+            "metaSortKey": -1638751377274,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_bdb8e833c312437a945f90e21910523a",
+            "parentId": "wrk_1e535267a7ed434899bb20d98583d551",
+            "modified": 1638751281449,
+            "created": 1638751263121,
+            "url": "http://localhost:4000/api/rules",
+            "name": "list rule",
+            "description": "",
+            "method": "GET",
+            "body": {},
+            "parameters": [],
+            "headers": [],
+            "authentication": {},
+            "metaSortKey": -1638751263121,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_371ded605f59451b8ca11c4b38275f02",
+            "parentId": "wrk_1e535267a7ed434899bb20d98583d551",
+            "modified": 1638751436341,
+            "created": 1638750844157,
+            "url": "http://localhost:4000/api/rules",
+            "name": "create rule",
+            "description": "",
+            "method": "POST",
+            "body": {
+                "mimeType": "application/json",
+                "text": "  {\n    \"rule\": { \n      \"description\": \"cashback simples\", \n      \"bonus\": 10\n    }\n  }"
+            },
+            "parameters": [],
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json",
+                    "id": "pair_ce26fc08e0634317b287ee10ef8b5f6a"
+                }
+            ],
+            "authentication": {},
+            "metaSortKey": -1638750844157,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "env_a5f2dad8ac5ea554ab30775cc1d425eb8078b0ea",
+            "parentId": "wrk_1e535267a7ed434899bb20d98583d551",
+            "modified": 1638750778395,
+            "created": 1638750778395,
+            "name": "Base Environment",
+            "data": {},
+            "dataPropertyOrder": null,
+            "color": null,
+            "isPrivate": false,
+            "metaSortKey": 1638750778395,
+            "_type": "environment"
+        },
+        {
+            "_id": "jar_a5f2dad8ac5ea554ab30775cc1d425eb8078b0ea",
+            "parentId": "wrk_1e535267a7ed434899bb20d98583d551",
+            "modified": 1638750778400,
+            "created": 1638750778400,
+            "name": "Default Jar",
+            "cookies": [],
+            "_type": "cookie_jar"
+        },
+        {
+            "_id": "spc_c6147781a5b54a1eab60e8ed942090f5",
+            "parentId": "wrk_1e535267a7ed434899bb20d98583d551",
+            "modified": 1638750778385,
+            "created": 1638750778385,
+            "fileName": "api",
+            "contents": "",
+            "contentType": "yaml",
+            "_type": "api_spec"
+        }
+    ]
+}

@@ -36,9 +36,9 @@
  - Cadastrar regras (post `api/rules`)
   ```
   {
-    rule: { 
-      description: "cashback simples", 
-      bonus: 10
+    "rule": { 
+      "description": "cashback simples", 
+      "bonus": 10
     }
   }
   ```
@@ -48,10 +48,10 @@
  - Cadastrar compra do usuario (post `api/purchases`)
   ```
   {
-    purchase: { 
-      rule_id: 1,
-      user_cpf: "466.745.098-20",
-      price: 2000
+    "purchase": { 
+      "rule_id": 1,
+      "user_cpf": "466.745.098-20",
+      "price": 2000
     }
   }
   ```
