@@ -1,9 +1,42 @@
 {
     "_type": "export",
     "__export_format": 4,
-    "__export_date": "2021-12-06T00:48:08.470Z",
+    "__export_date": "2021-12-07T02:51:45.415Z",
     "__export_source": "insomnia.desktop.app:v2021.6.0",
     "resources": [
+        {
+            "_id": "req_fcd20a4bebd74e6986b3c889b74402b6",
+            "parentId": "wrk_1e535267a7ed434899bb20d98583d551",
+            "modified": 1638845346054,
+            "created": 1638845203044,
+            "url": "http://localhost:4000/api/cashback_code/1",
+            "name": "cashback_code",
+            "description": "",
+            "method": "POST",
+            "body": {},
+            "parameters": [],
+            "headers": [],
+            "authentication": {},
+            "metaSortKey": -1638845203045,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "wrk_1e535267a7ed434899bb20d98583d551",
+            "parentId": null,
+            "modified": 1638750778383,
+            "created": 1638750778383,
+            "name": "api",
+            "description": "",
+            "scope": "collection",
+            "_type": "workspace"
+        },
         {
             "_id": "req_0fe7be39b29b41d2b8baa34e90ed5ce5",
             "parentId": "wrk_1e535267a7ed434899bb20d98583d551",
@@ -28,19 +61,9 @@
             "_type": "request"
         },
         {
-            "_id": "wrk_1e535267a7ed434899bb20d98583d551",
-            "parentId": null,
-            "modified": 1638750778383,
-            "created": 1638750778383,
-            "name": "api",
-            "description": "",
-            "scope": "collection",
-            "_type": "workspace"
-        },
-        {
             "_id": "req_855c315514994a5da346b3b58c275744",
             "parentId": "wrk_1e535267a7ed434899bb20d98583d551",
-            "modified": 1638751460636,
+            "modified": 1638752055970,
             "created": 1638751377274,
             "url": "http://localhost:4000/api/purchases",
             "name": "create purchase",
@@ -48,7 +71,7 @@
             "method": "POST",
             "body": {
                 "mimeType": "application/json",
-                "text": "  {\n    \"purchase\": { \n      \"rule_id\": 1,\n      \"user_cpf\": \"466.745.098-20\",\n      \"price\": 2000\n    }\n  }"
+                "text": "  {\n    \"purchase\": { \n      \"rule_id\": 1,\n      \"user_cpf\": \"123.745.098-21\",\n      \"price\": 100\n    }\n  }"
             },
             "parameters": [],
             "headers": [

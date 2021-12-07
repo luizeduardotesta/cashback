@@ -106,7 +106,12 @@ defmodule Cashback.Purchases do
   Returns a cashback calculation.
 
   """
-  def calc_cashback(price, bonus) do
-    price * (bonus / 100)
-  end
+  @spec calc_cashback(Integer.t(), Integer.t()) :: Float.t()
+  def calc_cashback(price, bonus), do: price * (bonus / 100)
+
+  @doc """
+    Generates a code for cashback based on id and user_cpf from a purchase.
+  """
+  @spec gen_code(Integer.t() | String.t(), String.t()) :: binary()
+  def gen_code(id, cpf), do: :crypto.hash(:md5, "#{id} #{cpf}") |> Base.encode16()
 end

@@ -58,7 +58,7 @@
 
  - Listagem de compras (get `api/purchases`)
 
- - Listar cashback por cliente (get `api/cashback`)
+ - Gerar codigó de cashback por compra (post `api/cashback_code/:id`)
 
 ## Made by
 
