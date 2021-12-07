@@ -7,7 +7,8 @@ defmodule CashbackWeb.PurchaseView do
 
   def render("purchase.json", %{purchase: purchase}) do
     purchase = Cashback.Repo.preload(purchase, :rule)
-      %{
+
+    %{
       price: purchase.price,
       user_cpf: purchase.user_cpf,
       rule_id: purchase.rule_id,
@@ -19,5 +20,16 @@ defmodule CashbackWeb.PurchaseView do
 
   def render("index.json", %{purchases: purchases}) do
     %{data: render_many(purchases, __MODULE__, "purchase.json")}
+  end
+
+  def render("code.json", %{purchase: purchase}) do
+    purchase = Cashback.Repo.preload(purchase, :rule)
+
+    %{
+      data: %{
+        value: Cashback.Purchases.calc_cashback(purchase.price, purchase.rule.bonus),
+        code: :crypto.hash(:md5, "#{purchase.id} #{purchase.user_cpf}") |> Base.encode16()
+      }
+    }
   end
 end

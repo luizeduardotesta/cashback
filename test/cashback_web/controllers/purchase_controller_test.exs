@@ -4,6 +4,8 @@ defmodule CashbackWeb.PurchaseControllerTest do
 
   import Cashback.PurchasesFixtures
 
+  alias Cashback.Purchases
+
   setup %{conn: conn} do
     {:ok, conn: put_req_header(conn, "accept", "application/json")}
   end
@@ -48,7 +50,24 @@ defmodule CashbackWeb.PurchaseControllerTest do
       assert subject["user_cpf"] == purchase.user_cpf
       assert subject["rule_id"] == purchase.rule_id
       assert subject["rule_description"] == purchase.rule.description
-      assert subject["cashback"] == Cashback.Purchases.calc_cashback(purchase.price, purchase.rule.bonus)
+      assert subject["cashback"] == Purchases.calc_cashback(purchase.price, purchase.rule.bonus)
+    end
+  end
+
+  describe "cashback_code/2" do
+    setup %{conn: conn} do
+      {:ok, conn: conn, purchase: purchase_fixture()}
+    end
+
+    test "returns a caskback's code when valid data", %{conn: conn, purchase: purchase} do
+      code = :crypto.hash(:md5, "#{purchase.id} #{purchase.user_cpf}") |> Base.encode16()
+      purchase = Cashback.Repo.preload(purchase, :rule)
+
+      conn = post(conn, "api/cashback_code/#{purchase.id}")
+
+      assert subject = json_response(conn, 201)["data"]
+      assert subject["value"] == Purchases.calc_cashback(purchase.price, purchase.rule.bonus)
+      assert subject["code"] == code
     end
   end
 end
